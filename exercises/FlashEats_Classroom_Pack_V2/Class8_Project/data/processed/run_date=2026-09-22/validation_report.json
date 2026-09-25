@@ -1,0 +1,27 @@
+[
+  {
+    "check": "orders.required_columns",
+    "status": "PASS",
+    "detail": "8 required columns present"
+  },
+  {
+    "check": "orders.order_id_uniqueness",
+    "status": "WARN",
+    "detail": "duplicate rows involved=6"
+  },
+  {
+    "check": "orders.delivered_completion_timestamp",
+    "status": "WARN",
+    "detail": "delivered rows missing actual_delivery_at=37"
+  },
+  {
+    "check": "orders.freshness",
+    "status": "PASS",
+    "detail": "latest_created_at=2026-08-28 23:33:00; age_days=25"
+  },
+  {
+    "check": "dispatch.required_columns",
+    "status": "PASS",
+    "detail": "2 required columns present"
+  }
+]

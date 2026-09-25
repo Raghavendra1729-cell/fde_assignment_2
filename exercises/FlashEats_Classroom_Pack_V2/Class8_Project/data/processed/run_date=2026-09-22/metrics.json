@@ -1,0 +1,8 @@
+{
+  "orders_in_journey": 1600,
+  "measurable_deliveries": 1495,
+  "late_delivery_rate_pct": 56.39,
+  "median_order_to_pickup_min": 26.07,
+  "median_transit_min": 47.23,
+  "orders_with_intervention": 430
+}
