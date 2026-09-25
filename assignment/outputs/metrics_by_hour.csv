@@ -1,0 +1,49 @@
+day_type,pickup_hour,trips,long_trip_rate,median_min,p90_min,fare_per_trip_hour,advice
+weekday,0,5151,0.0074,34.1,45.0,118.66,steer toward
+weekday,1,2078,0.0053,32.3,43.3,124.44,steer toward
+weekday,2,749,0.0027,30.6,41.5,131.04,steer toward
+weekday,3,241,0.0041,30.3,42.9,129.16,steer toward
+weekday,4,235,0.0,31.4,39.7,131.33,steer toward
+weekday,5,1221,0.0287,39.5,51.9,102.94,steer toward
+weekday,6,2918,0.3506,55.5,72.9,73.87,neutral
+weekday,7,4329,0.7574,71.4,93.6,58.42,steer away
+weekday,8,3835,0.7557,70.5,90.6,59.5,steer away
+weekday,9,3037,0.5851,62.8,82.5,65.59,steer away
+weekday,10,3549,0.5382,61.2,79.5,67.37,steer away
+weekday,11,5739,0.5024,60.1,78.6,68.58,steer away
+weekday,12,5080,0.5191,60.5,78.2,68.05,steer away
+weekday,13,7062,0.6793,65.9,84.1,62.83,steer away
+weekday,14,10296,0.7857,70.2,89.1,58.99,steer away
+weekday,15,12090,0.7762,70.4,89.7,58.94,steer away
+weekday,16,13051,0.6334,64.4,82.7,64.11,steer away
+weekday,17,10443,0.4801,59.3,78.0,69.12,neutral
+weekday,18,9007,0.2159,50.9,66.4,80.62,neutral
+weekday,19,10655,0.0759,44.2,57.7,91.9,steer toward
+weekday,20,8794,0.0371,40.5,52.5,100.18,steer toward
+weekday,21,7850,0.0268,39.0,50.6,104.21,steer toward
+weekday,22,7662,0.0483,39.4,52.6,101.95,steer toward
+weekday,23,6925,0.0604,39.4,55.1,101.08,steer toward
+weekend,0,1413,0.0446,37.6,51.9,105.34,steer toward
+weekend,1,551,0.0,34.4,43.6,119.83,steer toward
+weekend,2,119,0.0,32.0,37.7,130.39,steer toward
+weekend,3,31,0.0,30.7,38.0,132.4,too few trips
+weekend,4,51,0.0,30.6,37.3,134.77,too few trips
+weekend,5,291,0.0034,31.0,40.4,131.42,steer toward
+weekend,6,549,0.02,31.9,44.6,123.17,steer toward
+weekend,7,783,0.0281,35.2,49.3,112.69,steer toward
+weekend,8,716,0.0279,35.7,51.2,111.23,steer toward
+weekend,9,754,0.0995,39.9,59.7,98.37,steer toward
+weekend,10,914,0.1521,44.8,66.5,88.17,neutral
+weekend,11,1999,0.2456,50.6,73.2,78.92,neutral
+weekend,12,1794,0.2709,52.4,71.9,76.65,neutral
+weekend,13,3059,0.3727,56.2,74.5,72.23,neutral
+weekend,14,4393,0.4509,58.7,75.7,69.49,neutral
+weekend,15,5339,0.4756,59.5,76.1,68.65,neutral
+weekend,16,5342,0.3802,56.9,72.3,72.0,neutral
+weekend,17,4729,0.3394,55.4,71.1,74.16,neutral
+weekend,18,3894,0.1667,50.4,64.4,81.55,neutral
+weekend,19,5120,0.0975,47.2,59.8,86.86,steer toward
+weekend,20,4582,0.1041,45.4,60.2,89.2,neutral
+weekend,21,3944,0.0588,42.1,55.8,96.42,steer toward
+weekend,22,3733,0.0131,39.3,50.2,104.56,steer toward
+weekend,23,3059,0.0095,35.8,45.7,113.91,steer toward

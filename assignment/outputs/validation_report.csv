@@ -1,0 +1,28 @@
+month,rule_id,rule,severity,action,rows_hit,candidate_trips,share,business_reason
+2026-04,V01,pickup outside the file's month,high,exclude,0,69945,0.0,clock error or late record; it would leak into the wrong month's KPI
+2026-04,V02,dropoff at or before pickup,high,exclude,594,69945,0.008492,"trip time can't be measured, and trip time is the whole question"
+2026-04,V03,duration under 10 min,high,exclude,13,69945,0.000186,"JFK to Manhattan is 13+ miles, under 10 min is not a real run"
+2026-04,V04,duration over 180 min,medium,exclude,50,69945,0.000715,meter most likely left running; would inflate P90 and long-trip rate
+2026-04,V05,fare zero or negative,medium,exclude,492,69945,0.007034,"refund, void or dispute reversal, not a completed paid run"
+2026-04,V06,rate code is not the JFK flat fare (2),scope,exclude (out of scope),3311,69945,0.047337,"metered, negotiated, flex-fare or missing code; flat-fare economics don't apply"
+2026-04,F01,distance under 5 miles,low,"flag, keep",85,69945,0.001215,distance meter can fail on a real trip; duration and fare still look normal
+2026-04,F02,flat-fare trip with fare other than $70,low,"flag, keep",11,69945,0.000157,"flat fare should be exactly $70; kept, and the actual fare is used in $/hour"
+2026-04,F03,passenger_count is 0,low,"flag, keep",103,69945,0.001473,"driver-entered field, not used by any metric"
+2026-05,V01,pickup outside the file's month,high,exclude,0,72049,0.0,clock error or late record; it would leak into the wrong month's KPI
+2026-05,V02,dropoff at or before pickup,high,exclude,773,72049,0.010729,"trip time can't be measured, and trip time is the whole question"
+2026-05,V03,duration under 10 min,high,exclude,9,72049,0.000125,"JFK to Manhattan is 13+ miles, under 10 min is not a real run"
+2026-05,V04,duration over 180 min,medium,exclude,38,72049,0.000527,meter most likely left running; would inflate P90 and long-trip rate
+2026-05,V05,fare zero or negative,medium,exclude,494,72049,0.006856,"refund, void or dispute reversal, not a completed paid run"
+2026-05,V06,rate code is not the JFK flat fare (2),scope,exclude (out of scope),3621,72049,0.050257,"metered, negotiated, flex-fare or missing code; flat-fare economics don't apply"
+2026-05,F01,distance under 5 miles,low,"flag, keep",118,72049,0.001638,distance meter can fail on a real trip; duration and fare still look normal
+2026-05,F02,flat-fare trip with fare other than $70,low,"flag, keep",12,72049,0.000167,"flat fare should be exactly $70; kept, and the actual fare is used in $/hour"
+2026-05,F03,passenger_count is 0,low,"flag, keep",123,72049,0.001707,"driver-entered field, not used by any metric"
+2026-06,V01,pickup outside the file's month,high,exclude,1,70694,1.4e-05,clock error or late record; it would leak into the wrong month's KPI
+2026-06,V02,dropoff at or before pickup,high,exclude,781,70694,0.011048,"trip time can't be measured, and trip time is the whole question"
+2026-06,V03,duration under 10 min,high,exclude,14,70694,0.000198,"JFK to Manhattan is 13+ miles, under 10 min is not a real run"
+2026-06,V04,duration over 180 min,medium,exclude,35,70694,0.000495,meter most likely left running; would inflate P90 and long-trip rate
+2026-06,V05,fare zero or negative,medium,exclude,449,70694,0.006351,"refund, void or dispute reversal, not a completed paid run"
+2026-06,V06,rate code is not the JFK flat fare (2),scope,exclude (out of scope),3246,70694,0.045916,"metered, negotiated, flex-fare or missing code; flat-fare economics don't apply"
+2026-06,F01,distance under 5 miles,low,"flag, keep",109,70694,0.001542,distance meter can fail on a real trip; duration and fare still look normal
+2026-06,F02,flat-fare trip with fare other than $70,low,"flag, keep",19,70694,0.000269,"flat fare should be exactly $70; kept, and the actual fare is used in $/hour"
+2026-06,F03,passenger_count is 0,low,"flag, keep",85,70694,0.001202,"driver-entered field, not used by any metric"

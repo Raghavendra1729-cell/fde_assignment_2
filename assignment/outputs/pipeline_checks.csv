@@ -1,0 +1,43 @@
+month,check_id,check,severity,status,value,detail
+2026-04,S01,required columns present,FAIL-level,PASS,0,
+2026-04,S02,rows loaded = rows in parquet footer,FAIL-level,PASS,3831240,parquet metadata says 3831240
+2026-04,S03,share of pickups inside the file's month,FAIL-level,PASS,0.999997,threshold 0.999
+2026-04,S04,every day of the month has trips,FAIL-level,PASS,30,30 days expected
+2026-04,S05,vendors with unusable dropoff timestamps,WARN-level,WARN,1,VendorID 7: 100.0% of 49264 trips have dropoff <= pickup
+2026-04,S06,share of rows with null RatecodeID,INFO,INFO,0.2088,20.88% of all rows are null RatecodeID with payment_type 0 (Flex Fare)
+2026-04,S07,RatecodeID 2 trips that are not JFK -> Manhattan,INFO,INFO,24310,"of 90944 RatecodeID 2 trips: 66634 JFK->Manhattan, 16464 Manhattan->JFK, 6348 touch neither end at JFK"
+2026-04,S08,JFK pickups with unknown / outside-NYC dropoff zone,INFO,INFO,7251,"117 to zone 264 (Unknown), 7134 to zone 265 (Outside of NYC); not counted as Manhattan runs"
+2026-04,S09,weather hours complete,WARN-level,PASS,1,720 hours expected
+2026-04,S10,row count within 15% of previous month,WARN-level,INFO,n/a,"2026-03 not downloaded, nothing to compare with"
+2026-04,R01,raw rows = JFK->Manhattan candidates + all other rows,FAIL-level,PASS,3831240,69945 candidates + 3761295 other = 3831240
+2026-04,R02,candidates = valid + quality-excluded + scope-excluded,FAIL-level,PASS,69945,65594 valid + 1149 quality-excluded + 3202 out of scope = 69945
+2026-04,G01,quality exclusion rate within limit,FAIL-level,PASS,0.016427,limit 0.1
+2026-04,G02,enough valid trips to publish,FAIL-level,PASS,65594,minimum 1000
+2026-05,S01,required columns present,FAIL-level,PASS,0,
+2026-05,S02,rows loaded = rows in parquet footer,FAIL-level,PASS,4090836,parquet metadata says 4090836
+2026-05,S03,share of pickups inside the file's month,FAIL-level,PASS,0.999997,threshold 0.999
+2026-05,S04,every day of the month has trips,FAIL-level,PASS,31,31 days expected
+2026-05,S05,vendors with unusable dropoff timestamps,WARN-level,WARN,1,VendorID 7: 100.0% of 51750 trips have dropoff <= pickup
+2026-05,S06,share of rows with null RatecodeID,INFO,INFO,0.2335,23.35% of all rows are null RatecodeID with payment_type 0 (Flex Fare)
+2026-05,S07,RatecodeID 2 trips that are not JFK -> Manhattan,INFO,INFO,26727,"of 95155 RatecodeID 2 trips: 68428 JFK->Manhattan, 18935 Manhattan->JFK, 6242 touch neither end at JFK"
+2026-05,S08,JFK pickups with unknown / outside-NYC dropoff zone,INFO,INFO,6534,"102 to zone 264 (Unknown), 6432 to zone 265 (Outside of NYC); not counted as Manhattan runs"
+2026-05,S09,weather hours complete,WARN-level,PASS,1,744 hours expected
+2026-05,S10,row count within 15% of previous month,WARN-level,PASS,0.0678,4090836 rows vs 3831240 in 2026-04
+2026-05,R01,raw rows = JFK->Manhattan candidates + all other rows,FAIL-level,PASS,4090836,72049 candidates + 4018787 other = 4090836
+2026-05,R02,candidates = valid + quality-excluded + scope-excluded,FAIL-level,PASS,72049,67271 valid + 1314 quality-excluded + 3464 out of scope = 72049
+2026-05,G01,quality exclusion rate within limit,FAIL-level,PASS,0.018238,limit 0.1
+2026-05,G02,enough valid trips to publish,FAIL-level,PASS,67271,minimum 1000
+2026-06,S01,required columns present,FAIL-level,PASS,0,columns not in the data dictionary (ignored): request_source
+2026-06,S02,rows loaded = rows in parquet footer,FAIL-level,PASS,3837248,parquet metadata says 3837248
+2026-06,S03,share of pickups inside the file's month,FAIL-level,PASS,0.999996,threshold 0.999
+2026-06,S04,every day of the month has trips,FAIL-level,PASS,30,30 days expected
+2026-06,S05,vendors with unusable dropoff timestamps,WARN-level,WARN,1,VendorID 7: 100.0% of 49524 trips have dropoff <= pickup
+2026-06,S06,share of rows with null RatecodeID,INFO,INFO,0.2641,26.41% of all rows are null RatecodeID with payment_type 0 (Flex Fare)
+2026-06,S07,RatecodeID 2 trips that are not JFK -> Manhattan,INFO,INFO,25176,"of 92624 RatecodeID 2 trips: 67448 JFK->Manhattan, 17625 Manhattan->JFK, 5930 touch neither end at JFK"
+2026-06,S08,JFK pickups with unknown / outside-NYC dropoff zone,INFO,INFO,6843,"137 to zone 264 (Unknown), 6706 to zone 265 (Outside of NYC); not counted as Manhattan runs"
+2026-06,S09,weather hours complete,WARN-level,PASS,1,720 hours expected
+2026-06,S10,row count within 15% of previous month,WARN-level,PASS,-0.062,3837248 rows vs 4090836 in 2026-05
+2026-06,R01,raw rows = JFK->Manhattan candidates + all other rows,FAIL-level,PASS,3837248,70694 candidates + 3766554 other = 3837248
+2026-06,R02,candidates = valid + quality-excluded + scope-excluded,FAIL-level,PASS,70694,66291 valid + 1280 quality-excluded + 3123 out of scope = 70694
+2026-06,G01,quality exclusion rate within limit,FAIL-level,PASS,0.018106,limit 0.1
+2026-06,G02,enough valid trips to publish,FAIL-level,PASS,66291,minimum 1000
