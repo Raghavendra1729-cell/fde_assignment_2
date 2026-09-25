@@ -1,0 +1,61 @@
+restaurant_id,restaurant_name,cuisine,lat,lon,manual_status_updates
+R001,Restaurant 001,South Indian,13.177134,77.58787,1
+R002,Restaurant 002,Burgers,12.895015,77.42667,1
+R003,Restaurant 003,Chinese,12.776666,77.418857,0
+R004,Restaurant 004,South Indian,13.000479,77.651038,0
+R005,Restaurant 005,North Indian,12.80066,77.693895,1
+R006,Restaurant 006,Pizza,12.919377,77.610885,1
+R007,Restaurant 007,North Indian,95.12,77.694095,0
+R008,Restaurant 008,Cafe,12.94257,77.495732,1
+R009,Restaurant 009,Burgers,12.738971,77.514818,0
+R010,Restaurant 010,North Indian,12.948775,77.485083,0
+R011,Restaurant 011,Chinese,12.95741,77.603126,0
+R012,Restaurant 012,Biryani,12.947291,77.522489,1
+R013,Restaurant 013,Pizza,12.989833,77.643629,0
+R014,Restaurant 014,Biryani,12.853719,77.751128,1
+R015,Restaurant 015,Cafe,12.960942,77.596691,1
+R016,Restaurant 016,Biryani,13.048164,77.620473,0
+R017,Restaurant 017,North Indian,13.074642,77.626453,0
+R018,Restaurant 018,South Indian,12.905391,77.634705,0
+R019,Restaurant 019,Cafe,12.847954,190.33,1
+R020,Restaurant 020,Burgers,12.968008,77.571512,0
+R021,Restaurant 021,Biryani,12.957704,77.385829,0
+R022,Restaurant 022,South Indian,12.912278,77.6049,1
+R023,Restaurant 023,Pizza,12.988882,77.480591,0
+R024,Restaurant 024,South Indian,13.108433,77.498507,0
+R025,Restaurant 025,South Indian,13.076406,77.641993,0
+R026,Restaurant 026,Desserts,12.901738,77.791551,0
+R027,Restaurant 027,Biryani,12.842558,77.69657,1
+R028,Restaurant 028,Biryani,13.079771,77.520202,1
+R029,Restaurant 029,Burgers,13.122137,77.56686,0
+R030,Restaurant 030,South Indian,13.00281,77.62348,0
+R031,Restaurant 031,Chinese,12.95708,77.68455,0
+R032,Restaurant 032,Pizza,13.057383,77.400619,1
+R033,Restaurant 033,Cafe,13.11261,77.410165,1
+R034,Restaurant 034,Pizza,13.083227,77.719596,0
+R035,Restaurant 035,North Indian,12.853658,77.549025,1
+R036,Restaurant 036,North Indian,12.852064,77.570757,0
+R037,Restaurant 037,Cafe,12.938299,77.681095,1
+R038,Restaurant 038,Pizza,13.113255,77.749436,0
+R039,Restaurant 039,Biryani,12.910825,77.571389,1
+R040,Restaurant 040,Desserts,12.789607,77.505197,0
+R041,Restaurant 041,Desserts,13.075908,77.773831,1
+R042,Restaurant 042,Chinese,12.838157,77.528873,1
+R043,Restaurant 043,Burgers,12.968745,77.625681,0
+R044,Restaurant 044,Cafe,12.884075,77.641645,0
+R045,Restaurant 045,Cafe,12.920374,77.592997,1
+R046,Restaurant 046,Chinese,13.030658,77.595312,0
+R047,Restaurant 047,South Indian,12.924423,77.58244,0
+R048,Restaurant 048,South Indian,12.962047,77.553551,1
+R049,Restaurant 049,Chinese,12.943622,77.771953,0
+R050,Restaurant 050,Cafe,13.03224,77.56182,0
+R051,Restaurant 051,Cafe,13.046946,77.557566,0
+R052,Restaurant 052,Desserts,13.098424,77.635608,0
+R053,Restaurant 053,North Indian,12.96,77.644269,0
+R054,Restaurant 054,South Indian,12.801776,77.469597,0
+R055,Restaurant 055,Burgers,12.842527,77.610458,0
+R056,Restaurant 056,Biryani,13.158899,77.842138,1
+R057,Restaurant 057,Cafe,13.040578,77.650163,1
+R058,Restaurant 058,North Indian,12.776891,77.534396,0
+R059,Restaurant 059,Burgers,12.886434,77.525724,0
+R060,Restaurant 060,Chinese,12.953422,77.542227,0

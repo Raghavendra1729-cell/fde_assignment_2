@@ -1,0 +1,10 @@
+{
+  "project_kpi": "Reduce late delivery rate",
+  "business_question": "Where in the order lifecycle do delays accumulate, and which interventions are associated with better outcomes?",
+  "new_sources_for_class_7": [
+    "customer_app_actions.csv",
+    "order_interventions.csv",
+    "order_outcomes.csv"
+  ],
+  "note": "Raw systems are organized by source; the modelling task reorganizes them around the business workflow."
+}

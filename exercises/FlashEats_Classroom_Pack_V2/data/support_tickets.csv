@@ -1,0 +1,203 @@
+ticket_id,order_id,created_at,category,customer_message
+T00001,,2026-08-26T23:34:00,late_delivery,My order is already past the promised time.
+T00002,,2026-08-24T13:49:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00003,,2026-08-25T18:22:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00004,O00037,2026-08-09T21:09:00,Late Delivery,The rider has not moved for 15 minutes.
+T00005,O00040,2026-08-11T20:15:00,late_delivery ,My order is already past the promised time.
+T00006,O00041,2026-08-01T12:24:00,ETA issue,The rider has not moved for 15 minutes.
+T00007,O00042,2026-08-09T19:19:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00008,O00049,2026-08-09T11:42:00,late_delivery,My order is already past the promised time.
+T00009,O00058,2026-08-05T20:40:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00010,O00073,2026-08-27T14:06:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00011,O00079,2026-08-09T21:10:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00012,O00083,2026-08-16T00:39:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00013,O00090,2026-08-20T18:14:00,late_delivery,My order is already past the promised time.
+T00014,O00094,2026-08-19T17:47:00,late_delivery,My order is already past the promised time.
+T00015,O00116,2026-08-27T00:09:00,late_delivery,My order is already past the promised time.
+T00016,O00118,2026-08-27T22:35:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00017,O00121,2026-08-14T20:12:00,late_delivery,My order is already past the promised time.
+T00018,O00131,2026-08-28T20:26:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00019,O00147,2026-08-25T15:30:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00020,O00162,2026-08-26T18:23:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00021,O00169,2026-08-22T16:23:00,late_delivery,My order is already past the promised time.
+T00022,O00174,2026-08-21T19:21:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00023,O00180,2026-08-08T18:43:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00024,O00188,2026-08-09T20:12:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00025,O00194,2026-08-11T18:22:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00026,O00198,2026-08-19T19:01:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00027,O00205,2026-08-27T21:17:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00028,O00210,2026-08-14T13:06:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00029,O00211,2026-08-22T20:24:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00030,O00218,2026-08-07T00:38:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00031,O00231,2026-08-27T16:24:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00032,O00240,2026-08-25T12:49:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00033,O00244,2026-08-23T22:55:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00034,O00251,2026-08-28T15:45:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00035,O00256,2026-08-06T13:19:00,late_delivery,My order is already past the promised time.
+T00036,O00266,2026-08-10T21:11:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00037,O00280,2026-08-09T18:19:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00038,O00288,2026-08-09T20:16:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00039,O00295,2026-08-08T12:42:00,late_delivery,My order is already past the promised time.
+T00040,O00301,2026-08-20T20:35:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00041,O00302,2026-08-20T20:20:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00042,O00303,2026-08-19T20:35:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00043,O00320,2026-08-13T12:47:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00044,O00331,2026-08-15T18:14:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00045,O00333,2026-08-24T17:07:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00046,O00348,2026-08-07T17:48:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00047,O00359,2026-08-08T19:05:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00048,O00385,2026-08-22T22:13:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00049,O00391,2026-08-16T20:37:00,late_delivery,My order is already past the promised time.
+T00050,O00393,2026-08-08T00:12:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00051,O00424,2026-08-28T14:45:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00052,O00428,2026-08-05T18:53:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00053,O00430,2026-08-23T18:54:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00054,O00437,2026-08-07T00:02:00,late_delivery,My order is already past the promised time.
+T00055,O00442,2026-08-16T15:43:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00056,O00462,2026-08-19T18:45:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00057,O00471,2026-08-07T17:14:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00058,O00472,2026-08-08T19:45:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00059,O00491,2026-08-13T17:55:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00060,O00497,2026-08-13T20:07:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00061,O00508,2026-08-10T22:01:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00062,O00513,2026-08-06T12:19:00,late_delivery,My order is already past the promised time.
+T00063,O00525,2026-08-10T23:04:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00064,O00533,2026-08-14T16:34:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00065,O00539,2026-08-06T15:05:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00066,O00544,2026-08-13T17:31:00,late_delivery,My order is already past the promised time.
+T00067,O00554,2026-08-06T18:27:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00068,O00555,2026-08-24T15:31:00,late_delivery,My order is already past the promised time.
+T00069,O00556,2026-08-04T12:54:00,late_delivery,My order is already past the promised time.
+T00070,O00561,2026-08-18T22:40:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00071,O00563,2026-08-21T13:16:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00072,O00564,2026-08-18T22:03:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00073,O00574,2026-08-10T22:32:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00074,O00575,2026-08-26T23:17:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00075,O00582,2026-08-13T13:38:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00076,O00590,2026-08-03T16:32:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00077,O00592,2026-08-01T19:58:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00078,O00595,2026-08-24T23:03:00,late_delivery,My order is already past the promised time.
+T00079,O00598,2026-08-01T19:51:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00080,O00613,2026-08-01T19:34:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00081,O00615,2026-08-16T20:05:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00082,O00616,2026-08-16T23:19:00,late_delivery,My order is already past the promised time.
+T00083,O00619,2026-08-24T19:56:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00084,O00623,2026-08-20T23:37:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00085,O00631,2026-08-27T23:20:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00086,O00643,2026-08-06T23:33:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00087,O00651,2026-08-05T15:28:00,late_delivery,My order is already past the promised time.
+T00088,O00660,2026-08-18T19:10:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00089,O00666,2026-08-10T19:43:00,late_delivery,My order is already past the promised time.
+T00090,O00689,2026-08-06T14:06:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00091,O00692,2026-08-22T18:11:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00092,O00698,2026-08-11T18:10:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00093,O00699,2026-08-25T17:26:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00094,O00706,2026-08-22T18:07:00,late_delivery,My order is already past the promised time.
+T00095,O00714,2026-08-23T19:43:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00096,O00715,2026-08-04T19:45:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00097,O00725,2026-08-11T15:29:00,late_delivery,My order is already past the promised time.
+T00098,O00736,2026-08-04T20:38:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00099,O00744,2026-08-17T20:01:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00100,O00747,2026-08-27T17:50:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00101,O00758,2026-08-27T11:56:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00102,O00762,2026-08-12T19:26:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00103,O00793,2026-08-02T20:28:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00104,O00803,2026-08-28T13:51:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00105,O00819,2026-08-12T19:25:00,late_delivery,My order is already past the promised time.
+T00106,O00822,2026-08-04T16:44:00,late_delivery,My order is already past the promised time.
+T00107,O00835,2026-08-14T13:02:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00108,O00842,2026-08-26T13:25:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00109,O00845,2026-08-16T19:16:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00110,O00854,2026-08-22T19:24:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00111,O00862,2026-08-09T19:17:00,late_delivery,My order is already past the promised time.
+T00112,O00869,2026-08-09T21:36:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00113,O00883,2026-08-16T00:32:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00114,O00924,2026-08-08T18:44:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00115,O00925,2026-08-10T17:47:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00116,O00930,2026-08-15T19:04:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00117,O00941,2026-08-09T19:53:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00118,O00955,2026-08-09T22:04:00,late_delivery,My order is already past the promised time.
+T00119,O00960,2026-08-19T13:58:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00120,O00977,2026-08-27T13:12:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00121,O00983,2026-08-15T20:06:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00122,O00988,2026-08-04T13:49:00,late_delivery,My order is already past the promised time.
+T00123,O00991,2026-08-19T21:09:00,late_delivery,My order is already past the promised time.
+T00124,O00995,2026-08-22T18:27:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00125,O00997,2026-08-14T23:29:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00126,O01002,2026-08-03T19:06:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00127,O01020,2026-08-08T20:25:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00128,O01082,2026-08-14T17:09:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00129,O01094,2026-08-05T13:04:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00130,O01106,2026-08-23T19:14:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00131,O01142,2026-08-26T13:41:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00132,O01144,2026-08-26T22:27:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00133,O01152,2026-08-14T14:41:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00134,O01153,2026-08-19T20:29:00,late_delivery,My order is already past the promised time.
+T00135,O01170,2026-08-05T20:55:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00136,O01183,2026-08-02T19:34:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00137,O01185,2026-08-04T18:57:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00138,O01191,2026-08-12T21:01:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00139,O01197,2026-08-17T17:07:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00140,O01198,2026-08-25T18:30:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00141,O01203,2026-08-19T16:58:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00142,O01209,2026-08-09T19:21:00,late_delivery,My order is already past the promised time.
+T00143,O01213,2026-08-03T13:14:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00144,O01214,2026-08-26T13:14:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00145,O01215,2026-08-26T22:34:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00146,O01230,2026-08-17T18:33:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00147,O01233,2026-08-05T19:27:00,late_delivery,My order is already past the promised time.
+T00148,O01235,2026-08-28T13:41:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00149,O01245,2026-08-05T21:02:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00150,O01267,2026-08-13T23:12:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00151,O01268,2026-08-06T19:15:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00152,O01270,2026-08-21T12:41:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00153,O01278,2026-08-25T22:03:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00154,O01281,2026-08-21T13:08:00,late_delivery,My order is already past the promised time.
+T00155,O01291,2026-08-01T11:39:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00156,O01296,2026-08-12T21:00:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00157,O01300,2026-08-20T18:30:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00158,O01306,2026-08-22T21:25:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00159,O01314,2026-08-03T17:40:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00160,O01317,2026-08-05T22:49:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00161,O01323,2026-08-10T12:45:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00162,O01325,2026-08-24T22:53:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00163,O01327,2026-08-18T23:18:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00164,O01328,2026-08-08T19:36:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00165,O01349,2026-08-16T19:43:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00166,O01358,2026-08-08T20:53:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00167,O01362,2026-08-10T20:47:00,late_delivery,My order is already past the promised time.
+T00168,O01365,2026-08-17T18:17:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00169,O01380,2026-08-15T19:00:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00170,O01390,2026-08-15T19:38:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00171,O01400,2026-08-04T18:02:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00172,O01413,2026-08-23T20:55:00,late_delivery,My order is already past the promised time.
+T00173,O01422,2026-08-25T23:55:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00174,O01424,2026-08-26T19:59:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00175,O01429,2026-08-15T23:37:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00176,O01430,2026-08-08T18:54:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00177,O01433,2026-08-02T20:39:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00178,O01453,2026-08-15T21:04:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00179,O01454,2026-08-09T13:21:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00180,O01455,2026-08-16T19:11:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00181,O01459,2026-08-04T19:22:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00182,O01463,2026-08-18T13:12:00,late_delivery,My order is already past the promised time.
+T00183,O01467,2026-08-03T22:04:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00184,O01472,2026-08-28T20:43:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00185,O01477,2026-08-20T14:17:00,late_delivery,My order is already past the promised time.
+T00186,O01489,2026-08-15T22:43:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00187,O01491,2026-08-13T19:07:00,late_delivery,My order is already past the promised time.
+T00188,O01495,2026-08-23T15:04:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00189,O01497,2026-08-01T11:39:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00190,O01499,2026-08-07T20:30:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00191,O01501,2026-08-25T17:52:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00192,O01511,2026-08-21T12:00:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00193,O01552,2026-08-16T20:19:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00194,O01553,2026-08-27T22:27:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00195,O01554,2026-08-03T22:19:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00196,O01563,2026-08-03T11:46:00,eta_changed,The ETA keeps changing and the food is still not here.
+T00197,O01571,2026-08-26T19:38:00,restaurant_delay,Restaurant says they are still preparing my order.
+T00198,O01584,2026-08-22T21:28:00,driver_not_moving,The rider has not moved for 15 minutes.
+T00199,O01587,2026-08-12T18:14:00,late_delivery,My order is already past the promised time.
+T00200,O01588,2026-08-20T18:54:00,status_mismatch,The app says picking up but the restaurant says it is ready.
+T00201,O01590,2026-08-21T14:41:00,ready_but_waiting,Restaurant says food is ready but no rider has picked it up.
+T00013,O00090,2026-08-20T18:14:00,late_delivery,My order is already past the promised time.

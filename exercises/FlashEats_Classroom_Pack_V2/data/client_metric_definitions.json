@@ -1,0 +1,11 @@
+{
+  "metric_under_review": "Late Delivery Rate",
+  "leadership_claim": "Late Delivery Rate is 56%",
+  "stakeholders": {
+    "VP Operations": "Any delivered order after the promised ETA is late.",
+    "Support Lead": "Only more than 10 minutes beyond ETA should count as meaningfully late.",
+    "Finance": "Cancelled/refunded orders should not count in operational performance.",
+    "Data Team": "Historical dashboard uses delivered orders with non-null actual delivery time."
+  },
+  "note": "No canonical KPI owner is formally documented."
+}
