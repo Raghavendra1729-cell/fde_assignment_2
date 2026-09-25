@@ -242,8 +242,8 @@ def charts(hourly, months, folder):
 
 
 def publish(con, months, counts, rule_rows, check_rows):
-    # write everything into outputs/.tmp first and only move it into outputs/ at the end,
-    # so a crash halfway can't leave a mix of new CSVs and an old evidence table
+    # Build every output in outputs/.tmp first. Validation or generation failures therefore
+    # leave the published files alone; final replacements happen only after all files exist.
     tmp = config.OUTPUT_DIR / ".tmp"
     shutil.rmtree(tmp, ignore_errors=True)
     tmp.mkdir(parents=True)

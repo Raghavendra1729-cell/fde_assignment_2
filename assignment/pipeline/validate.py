@@ -37,7 +37,7 @@ SCOPE_RULES = ["V06"]
 
 def candidate_filter():
     # A "JFK -> Manhattan run" = meter engaged in zone 132 and disengaged in any Manhattan zone.
-    # Defined by zone pair, not by RatecodeID, because the rate code is typed in by the driver.
+    # Defined by zone pair, not by RatecodeID alone: the observed final rate code does not reliably identify route.
     return (f"PULocationID = {config.JFK_ZONE} AND DOLocationID IN "
             f"(SELECT zone_id FROM dim_zone WHERE borough = 'Manhattan')")
 

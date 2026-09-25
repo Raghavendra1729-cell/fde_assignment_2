@@ -32,7 +32,7 @@ DICTIONARY_COLUMNS = TRIP_COLUMNS + [
 ]
 
 JFK_ZONE = 132
-FLAT_FARE_RATECODE = 2          # RatecodeID 2 = JFK flat fare (driver-entered)
+FLAT_FARE_RATECODE = 2          # RatecodeID 2 = final rate code for the JFK flat fare
 FLAT_FARE_DOLLARS = 70          # JFK <-> Manhattan flat fare before surcharges, tolls and tip
 LONG_TRIP_MINUTES = 60          # project KPI threshold
 MIN_PLAUSIBLE_MINUTES = 10      # JFK to Manhattan is 13+ miles, under 10 min is not real

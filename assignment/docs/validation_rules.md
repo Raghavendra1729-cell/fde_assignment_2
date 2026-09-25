@@ -54,8 +54,8 @@ WARN means it's logged and shown in the checks file, but the month still publish
 (after 3 tries), S09 is a WARN, that month's weather columns stay empty, and the wet/dry rows of the evidence
 table show n/a. The duration metrics don't need weather, so they still publish. I ran this on purpose, see
 `docs/run_logs/run5_weather_api_down.log`, and `tests/test_validation.py` has a test for it. All output files
-are written to `outputs/.tmp/` first and moved into `outputs/` only at the end, so a crash can't leave half
-old and half new files.
+are built in `outputs/.tmp/` first and moved into `outputs/` only after generation succeeds, so validation and
+generation failures leave the published files unchanged.
 
 ## What I did not "fix"
 

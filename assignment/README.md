@@ -15,7 +15,7 @@ and a 3-5 minute demo of one judgement call.
 
 ## 2. The problem
 
-JFK to Manhattan is a flat fare in a yellow cab: $70 plus tolls and tip, however long it takes. A driver who
+JFK to Manhattan is a flat fare in a yellow cab: $70 plus applicable surcharges, tolls and tip, however long it takes. A driver who
 picks up at the wrong hour can spend well over an hour in traffic for the same $70 they'd get in 35 minutes at
 night. The fleet's operations manager wants to know which pickup hours are worth sending drivers into the JFK
 queue for.
@@ -46,7 +46,7 @@ Full source map (question -> information -> source -> owner -> grain -> gaps): [
 
 | Source | Owner | Grain | Retrieval | Used for |
 |---|---|---|---|---|
-| TLC yellow trip records (parquet) | NYC TLC, records made by the TPEP vendors | one row per trip | file over HTTPS | times, zones, rate code, fare |
+| TLC yellow trip records (parquet) | NYC TLC, records made by the TPEP vendors | one row per trip | file over HTTPS | times, zones, final rate code, fare |
 | TLC taxi zone lookup (CSV) | NYC TLC | one row per zone (265) | file over HTTPS | which zones are JFK / Manhattan |
 | Open-Meteo historical weather | Open-Meteo | one hour, one point near JFK | JSON API | wet vs dry hours |
 
@@ -73,7 +73,8 @@ The issues that mattered:
 
 - VendorID 7 (Helix) sends dropoff time = pickup time on 100% of its trips: 2,148 JFK -> Manhattan trips with
   no usable duration. Excluded (V02) and warned about every run, not imputed.
-- RatecodeID is typed in by the driver. 27% of rate code 2 trips aren't JFK -> Manhattan (see section 8).
+- RatecodeID records the final rate code in effect, but it is not a reliable route definition by itself: 27% of
+  rate code 2 records aren't JFK -> Manhattan zone pairs (see section 8).
 - 21-26% of all rows have no RatecodeID and no passenger_count; they are all payment_type 0 (Flex Fare).
 - 1,435 trips with a zero or negative fare (V05) and 123 with the meter on over 3 hours (V04, max 41 hours).
 - June has a `request_source` column that April, May and the data dictionary don't have.
@@ -112,7 +113,8 @@ Metrics ([definitions and KPI link](docs/metric_definitions.md)):
   delete-then-insert per month, so a rerun gives byte-identical outputs.
 - Failures: downloads retry 3 times with backoff through a `.part` file. An unpublished month (HTTP 403) or a
   failed gate stops the run with exit 1 and leaves `outputs/` unchanged. If the weather API is down, metric 5
-  says n/a and the rest publishes. Outputs are written to `outputs/.tmp/` and moved into place at the end.
+  says n/a and the rest publishes. New output files are fully built in `outputs/.tmp/` before final replacement,
+  so validation and generation failures cannot publish incomplete files.
 
 | Log | What happened | Exit |
 |---|---|---|
@@ -182,10 +184,11 @@ Suggested guidance: on weekdays, steer drivers away from JFK pickups between 07:
 from 19:00 on. On weekends JFK is fine most of the day. This covers trip time only; queue wait could change it.
 
 **Judgement call: what counts as a "JFK -> Manhattan run".** The shortcut is `RatecodeID = 2`, the JFK flat
-fare. I didn't use it as the definition because the driver types it in, and 27% of rate code 2 trips aren't
-JFK -> Manhattan (mostly the opposite direction). So the run is defined by where the meter went on and off
-(zone 132 to a Manhattan zone), and the rate code only decides if the trip is flat fare. Notebook 03 compares
-the two: the rate-code version adds about 61,500 wrong trips and changes the advice in five hour cells.
+fare. I didn't use it as the route definition because the field only records the final rate code in effect,
+and 27% of rate code 2 records aren't JFK -> Manhattan zone pairs (mostly the opposite direction). So the run
+is defined by where the meter went on and off (zone 132 to a Manhattan zone), and the rate code then decides
+whether the trip is in the flat-fare population. Notebook 03 compares the two: the rate-code-only version adds
+about 61,500 wrong-direction or unrelated trips and changes the advice in five hour cells.
 
 ## 9. Known / Unknown / Assumption / Limitation
 
