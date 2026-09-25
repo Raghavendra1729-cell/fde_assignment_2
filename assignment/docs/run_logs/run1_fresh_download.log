@@ -1,0 +1,88 @@
+2026-09-25 02:07:59 INFO    pipeline start, months: 2026-04, 2026-05, 2026-06
+2026-09-25 02:07:59 INFO      downloading https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv (attempt 1)
+2026-09-25 02:07:59 INFO      saved taxi_zone_lookup.csv (12331 bytes, sha256 1a99e1050922...)
+2026-09-25 02:07:59 INFO    zone lookup: 265 zones, zone 132 = JFK Airport
+2026-09-25 02:07:59 INFO    [2026-04] ingest
+2026-09-25 02:07:59 INFO      downloading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-04.parquet (attempt 1)
+2026-09-25 02:08:07 INFO      saved yellow_tripdata_2026-04.parquet (64818115 bytes, sha256 e03b82d5722a...)
+2026-09-25 02:08:08 INFO      saved open_meteo_2026-04.json (720 of 720 hours, no nulls)
+2026-09-25 02:08:08 INFO      loaded 3831240 rows (parquet footer says 3831240)
+2026-09-25 02:08:08 INFO    [2026-04] validate
+2026-09-25 02:08:08 WARNING   S05 vendors with unusable dropoff timestamps: VendorID 7: 100.0% of 49264 trips have dropoff <= pickup
+2026-09-25 02:08:08 INFO      S06 share of rows with null RatecodeID: 20.88% of all rows are null RatecodeID with payment_type 0 (Flex Fare)
+2026-09-25 02:08:08 INFO      S07 RatecodeID 2 trips that are not JFK -> Manhattan: of 90944 RatecodeID 2 trips: 66634 JFK->Manhattan, 16464 Manhattan->JFK, 6348 touch neither end at JFK
+2026-09-25 02:08:08 INFO      S08 JFK pickups with unknown / outside-NYC dropoff zone: 117 to zone 264 (Unknown), 7134 to zone 265 (Outside of NYC); not counted as Manhattan runs
+2026-09-25 02:08:08 INFO      S10 row count within 15% of previous month: 2026-03 not downloaded, nothing to compare with
+2026-09-25 02:08:08 INFO      V01 pickup outside the file's month                    0 of 69945  (exclude)
+2026-09-25 02:08:08 INFO      V02 dropoff at or before pickup                      594 of 69945  (exclude)
+2026-09-25 02:08:08 INFO      V03 duration under 10 min                             13 of 69945  (exclude)
+2026-09-25 02:08:08 INFO      V04 duration over 180 min                             50 of 69945  (exclude)
+2026-09-25 02:08:08 INFO      V05 fare zero or negative                            492 of 69945  (exclude)
+2026-09-25 02:08:08 INFO      V06 rate code is not the JFK flat fare (2)          3311 of 69945  (exclude (out of scope))
+2026-09-25 02:08:08 INFO      F01 distance under 5 miles                            85 of 69945  (flag, keep)
+2026-09-25 02:08:08 INFO      F02 flat-fare trip with fare other than $70           11 of 69945  (flag, keep)
+2026-09-25 02:08:08 INFO      F03 passenger_count is 0                             103 of 69945  (flag, keep)
+2026-09-25 02:08:08 INFO      R01 raw rows = JFK->Manhattan candidates + all other rows: PASS (value 3831240; 69945 candidates + 3761295 other = 3831240)
+2026-09-25 02:08:08 INFO      R02 candidates = valid + quality-excluded + scope-excluded: PASS (value 69945; 65594 valid + 1149 quality-excluded + 3202 out of scope = 69945)
+2026-09-25 02:08:08 INFO      G01 quality exclusion rate within limit: PASS (value 0.016427; limit 0.1)
+2026-09-25 02:08:08 INFO      G02 enough valid trips to publish: PASS (value 65594; minimum 1000)
+2026-09-25 02:08:08 INFO    [2026-04] model
+2026-09-25 02:08:08 INFO      model: 720 hours in dim_hour, 65594 trips in trip_fact, orphans hour=0 zone=0
+2026-09-25 02:08:08 INFO    [2026-04] PASSED
+2026-09-25 02:08:08 INFO    [2026-05] ingest
+2026-09-25 02:08:08 INFO      downloading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-05.parquet (attempt 1)
+2026-09-25 02:08:17 INFO      saved yellow_tripdata_2026-05.parquet (69699174 bytes, sha256 9aa5a1609e2b...)
+2026-09-25 02:08:17 INFO      saved open_meteo_2026-05.json (744 of 744 hours, no nulls)
+2026-09-25 02:08:18 INFO      loaded 4090836 rows (parquet footer says 4090836)
+2026-09-25 02:08:18 INFO    [2026-05] validate
+2026-09-25 02:08:18 WARNING   S05 vendors with unusable dropoff timestamps: VendorID 7: 100.0% of 51750 trips have dropoff <= pickup
+2026-09-25 02:08:18 INFO      S06 share of rows with null RatecodeID: 23.35% of all rows are null RatecodeID with payment_type 0 (Flex Fare)
+2026-09-25 02:08:18 INFO      S07 RatecodeID 2 trips that are not JFK -> Manhattan: of 95155 RatecodeID 2 trips: 68428 JFK->Manhattan, 18935 Manhattan->JFK, 6242 touch neither end at JFK
+2026-09-25 02:08:18 INFO      S08 JFK pickups with unknown / outside-NYC dropoff zone: 102 to zone 264 (Unknown), 6432 to zone 265 (Outside of NYC); not counted as Manhattan runs
+2026-09-25 02:08:18 INFO      S10 row count within 15% of previous month: 4090836 rows vs 3831240 in 2026-04
+2026-09-25 02:08:18 INFO      V01 pickup outside the file's month                    0 of 72049  (exclude)
+2026-09-25 02:08:18 INFO      V02 dropoff at or before pickup                      773 of 72049  (exclude)
+2026-09-25 02:08:18 INFO      V03 duration under 10 min                              9 of 72049  (exclude)
+2026-09-25 02:08:18 INFO      V04 duration over 180 min                             38 of 72049  (exclude)
+2026-09-25 02:08:18 INFO      V05 fare zero or negative                            494 of 72049  (exclude)
+2026-09-25 02:08:18 INFO      V06 rate code is not the JFK flat fare (2)          3621 of 72049  (exclude (out of scope))
+2026-09-25 02:08:18 INFO      F01 distance under 5 miles                           118 of 72049  (flag, keep)
+2026-09-25 02:08:18 INFO      F02 flat-fare trip with fare other than $70           12 of 72049  (flag, keep)
+2026-09-25 02:08:18 INFO      F03 passenger_count is 0                             123 of 72049  (flag, keep)
+2026-09-25 02:08:18 INFO      R01 raw rows = JFK->Manhattan candidates + all other rows: PASS (value 4090836; 72049 candidates + 4018787 other = 4090836)
+2026-09-25 02:08:18 INFO      R02 candidates = valid + quality-excluded + scope-excluded: PASS (value 72049; 67271 valid + 1314 quality-excluded + 3464 out of scope = 72049)
+2026-09-25 02:08:18 INFO      G01 quality exclusion rate within limit: PASS (value 0.018238; limit 0.1)
+2026-09-25 02:08:18 INFO      G02 enough valid trips to publish: PASS (value 67271; minimum 1000)
+2026-09-25 02:08:18 INFO    [2026-05] model
+2026-09-25 02:08:18 INFO      model: 744 hours in dim_hour, 67271 trips in trip_fact, orphans hour=0 zone=0
+2026-09-25 02:08:18 INFO    [2026-05] PASSED
+2026-09-25 02:08:18 INFO    [2026-06] ingest
+2026-09-25 02:08:18 INFO      downloading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-06.parquet (attempt 1)
+2026-09-25 02:08:26 INFO      saved yellow_tripdata_2026-06.parquet (65465637 bytes, sha256 f340c62a1888...)
+2026-09-25 02:08:27 INFO      saved open_meteo_2026-06.json (720 of 720 hours, no nulls)
+2026-09-25 02:08:27 INFO      loaded 3837248 rows (parquet footer says 3837248)
+2026-09-25 02:08:27 INFO    [2026-06] validate
+2026-09-25 02:08:27 WARNING   S05 vendors with unusable dropoff timestamps: VendorID 7: 100.0% of 49524 trips have dropoff <= pickup
+2026-09-25 02:08:27 INFO      S06 share of rows with null RatecodeID: 26.41% of all rows are null RatecodeID with payment_type 0 (Flex Fare)
+2026-09-25 02:08:27 INFO      S07 RatecodeID 2 trips that are not JFK -> Manhattan: of 92624 RatecodeID 2 trips: 67448 JFK->Manhattan, 17625 Manhattan->JFK, 5930 touch neither end at JFK
+2026-09-25 02:08:27 INFO      S08 JFK pickups with unknown / outside-NYC dropoff zone: 137 to zone 264 (Unknown), 6706 to zone 265 (Outside of NYC); not counted as Manhattan runs
+2026-09-25 02:08:27 INFO      S10 row count within 15% of previous month: 3837248 rows vs 4090836 in 2026-05
+2026-09-25 02:08:27 INFO      V01 pickup outside the file's month                    1 of 70694  (exclude)
+2026-09-25 02:08:27 INFO      V02 dropoff at or before pickup                      781 of 70694  (exclude)
+2026-09-25 02:08:27 INFO      V03 duration under 10 min                             14 of 70694  (exclude)
+2026-09-25 02:08:27 INFO      V04 duration over 180 min                             35 of 70694  (exclude)
+2026-09-25 02:08:27 INFO      V05 fare zero or negative                            449 of 70694  (exclude)
+2026-09-25 02:08:27 INFO      V06 rate code is not the JFK flat fare (2)          3246 of 70694  (exclude (out of scope))
+2026-09-25 02:08:27 INFO      F01 distance under 5 miles                           109 of 70694  (flag, keep)
+2026-09-25 02:08:27 INFO      F02 flat-fare trip with fare other than $70           19 of 70694  (flag, keep)
+2026-09-25 02:08:27 INFO      F03 passenger_count is 0                              85 of 70694  (flag, keep)
+2026-09-25 02:08:27 INFO      R01 raw rows = JFK->Manhattan candidates + all other rows: PASS (value 3837248; 70694 candidates + 3766554 other = 3837248)
+2026-09-25 02:08:27 INFO      R02 candidates = valid + quality-excluded + scope-excluded: PASS (value 70694; 66291 valid + 1280 quality-excluded + 3123 out of scope = 70694)
+2026-09-25 02:08:27 INFO      G01 quality exclusion rate within limit: PASS (value 0.018106; limit 0.1)
+2026-09-25 02:08:27 INFO      G02 enough valid trips to publish: PASS (value 66291; minimum 1000)
+2026-09-25 02:08:27 INFO    [2026-06] model
+2026-09-25 02:08:28 INFO      model: 720 hours in dim_hour, 66291 trips in trip_fact, orphans hour=0 zone=0
+2026-09-25 02:08:28 INFO    [2026-06] PASSED
+2026-09-25 02:08:28 INFO    metrics + outputs
+2026-09-25 02:08:28 INFO      KPI (all months): long-trip rate 34.5%, median 52.7 min, P90 77.2 min, $76.98 per trip-hour
+2026-09-25 02:08:28 INFO    done in 29 s, all 3 months published

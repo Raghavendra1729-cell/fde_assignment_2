@@ -1,0 +1,70 @@
+{
+  "files": {
+    "open_meteo_2026-04.json": {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=40.64&longitude=-73.78&start_date=2026-04-01&end_date=2026-04-30&hourly=precipitation%2Ctemperature_2m&timezone=America%2FNew_York",
+      "local_path": "data/raw/weather/open_meteo_2026-04.json",
+      "bytes": 20874,
+      "http_content_length": null,
+      "sha256": "b91cfe4a8ba80be72918fe9ab3a7e53c496de879495cc591b502f52f67143b32",
+      "hours": 720,
+      "retrieved_at": "2026-09-24T20:38:08Z"
+    },
+    "open_meteo_2026-05.json": {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=40.64&longitude=-73.78&start_date=2026-05-01&end_date=2026-05-31&hourly=precipitation%2Ctemperature_2m&timezone=America%2FNew_York",
+      "local_path": "data/raw/weather/open_meteo_2026-05.json",
+      "bytes": 21871,
+      "http_content_length": null,
+      "sha256": "db52d35a826289fd02401c8083e9d2f1cf860c80d6330df164986ffa38855087",
+      "hours": 744,
+      "retrieved_at": "2026-09-24T20:38:17Z"
+    },
+    "open_meteo_2026-06.json": {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=40.64&longitude=-73.78&start_date=2026-06-01&end_date=2026-06-30&hourly=precipitation%2Ctemperature_2m&timezone=America%2FNew_York",
+      "local_path": "data/raw/weather/open_meteo_2026-06.json",
+      "bytes": 21205,
+      "http_content_length": null,
+      "sha256": "fe982e71ba16165a216333bcd2f303cf9baada57fc4350f128e8dfa155ed2887",
+      "hours": 720,
+      "retrieved_at": "2026-09-24T20:38:27Z"
+    },
+    "taxi_zone_lookup.csv": {
+      "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv",
+      "local_path": "data/raw/taxi_zone_lookup.csv",
+      "bytes": 12331,
+      "http_content_length": null,
+      "last_modified": "Thu, 22 Feb 2024 21:33:00 GMT",
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "retrieved_at": "2026-09-24T20:37:59Z"
+    },
+    "yellow_tripdata_2026-04.parquet": {
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-04.parquet",
+      "local_path": "data/raw/trips/yellow_tripdata_2026-04.parquet",
+      "bytes": 64818115,
+      "http_content_length": 64818115,
+      "last_modified": "Fri, 05 Jun 2026 20:44:34 GMT",
+      "sha256": "e03b82d5722a6b21d4fbce011afd8837495202c0b5db77ff0d8d15dd80834ba8",
+      "retrieved_at": "2026-09-24T20:38:07Z",
+      "parquet_num_rows": 3831240
+    },
+    "yellow_tripdata_2026-05.parquet": {
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-05.parquet",
+      "local_path": "data/raw/trips/yellow_tripdata_2026-05.parquet",
+      "bytes": 69699174,
+      "http_content_length": 69699174,
+      "last_modified": "Fri, 26 Jun 2026 21:07:20 GMT",
+      "sha256": "9aa5a1609e2bf07d9051b7d530de05b1019e12a560ecb2c59c137c8b3a8b6750",
+      "retrieved_at": "2026-09-24T20:38:17Z",
+      "parquet_num_rows": 4090836
+    },
+    "yellow_tripdata_2026-06.parquet": {
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-06.parquet",
+      "local_path": "data/raw/trips/yellow_tripdata_2026-06.parquet",
+      "bytes": 65465637,
+      "http_content_length": 65465637,
+      "last_modified": "Thu, 17 Sep 2026 18:34:43 GMT",
+      "sha256": "f340c62a18885c56176433c9db28e97d0a8a14e6e49869276ad8afb20ebf088b",
+      "retrieved_at": "2026-09-24T20:38:26Z",
+      "parquet_num_rows": 3837248
+    }
+  }
+}

@@ -1,0 +1,29 @@
+2026-09-25 02:08:34 INFO    pipeline start, months: 2026-05
+2026-09-25 02:08:34 INFO      skip download, taxi_zone_lookup.csv already present (sha256 matches manifest)
+2026-09-25 02:08:34 INFO    zone lookup: 265 zones, zone 132 = JFK Airport
+2026-09-25 02:08:34 INFO    [2026-05] ingest
+2026-09-25 02:08:34 INFO      skip download, yellow_tripdata_2026-05.parquet already present (sha256 matches manifest)
+2026-09-25 02:08:34 INFO      skip weather API call, open_meteo_2026-05.json already saved (744 of 744 hours, no nulls)
+2026-09-25 02:08:35 INFO      loaded 4090836 rows (parquet footer says 4090836)
+2026-09-25 02:08:35 INFO    [2026-05] validate
+2026-09-25 02:08:35 WARNING   S05 vendors with unusable dropoff timestamps: VendorID 7: 100.0% of 51750 trips have dropoff <= pickup
+2026-09-25 02:08:35 INFO      S06 share of rows with null RatecodeID: 23.35% of all rows are null RatecodeID with payment_type 0 (Flex Fare)
+2026-09-25 02:08:35 INFO      S07 RatecodeID 2 trips that are not JFK -> Manhattan: of 95155 RatecodeID 2 trips: 68428 JFK->Manhattan, 18935 Manhattan->JFK, 6242 touch neither end at JFK
+2026-09-25 02:08:35 INFO      S08 JFK pickups with unknown / outside-NYC dropoff zone: 102 to zone 264 (Unknown), 6432 to zone 265 (Outside of NYC); not counted as Manhattan runs
+2026-09-25 02:08:35 INFO      S10 row count within 15% of previous month: 4090836 rows vs 3831240 in 2026-04
+2026-09-25 02:08:35 INFO      V01 pickup outside the file's month                    0 of 72049  (exclude)
+2026-09-25 02:08:35 INFO      V02 dropoff at or before pickup                      773 of 72049  (exclude)
+2026-09-25 02:08:35 INFO      V03 duration under 10 min                              9 of 72049  (exclude)
+2026-09-25 02:08:35 INFO      V04 duration over 180 min                             38 of 72049  (exclude)
+2026-09-25 02:08:35 INFO      V05 fare zero or negative                            494 of 72049  (exclude)
+2026-09-25 02:08:35 INFO      V06 rate code is not the JFK flat fare (2)          3621 of 72049  (exclude (out of scope))
+2026-09-25 02:08:35 INFO      F01 distance under 5 miles                           118 of 72049  (flag, keep)
+2026-09-25 02:08:35 INFO      F02 flat-fare trip with fare other than $70           12 of 72049  (flag, keep)
+2026-09-25 02:08:35 INFO      F03 passenger_count is 0                             123 of 72049  (flag, keep)
+2026-09-25 02:08:35 ERROR     G01 FAILED: quality exclusion rate within limit (value 0.018238, limit 0.01)
+2026-09-25 02:08:35 INFO      R01 raw rows = JFK->Manhattan candidates + all other rows: PASS (value 4090836; 72049 candidates + 4018787 other = 4090836)
+2026-09-25 02:08:35 INFO      R02 candidates = valid + quality-excluded + scope-excluded: PASS (value 72049; 67271 valid + 1314 quality-excluded + 3464 out of scope = 72049)
+2026-09-25 02:08:35 INFO      G01 quality exclusion rate within limit: FAIL (value 0.018238; limit 0.01)
+2026-09-25 02:08:35 INFO      G02 enough valid trips to publish: PASS (value 67271; minimum 1000)
+2026-09-25 02:08:35 INFO    [2026-05] FAILED, not published
+2026-09-25 02:08:35 ERROR   months failed: 2026-05. outputs/ left unchanged (last good run stays published)
