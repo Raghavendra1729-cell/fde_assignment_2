@@ -1,0 +1,23 @@
+# raw and processed data are rebuilt by the pipeline (data/raw_manifest.json is kept)
+data/raw/
+data/processed/
+logs/
+
+# local only
+loom_script.md
+notes/
+*_notes.md
+notes.md
+
+# python / jupyter / os
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# written locally by each run, has timestamps
+outputs/last_run_log.txt
+outputs/.tmp/
