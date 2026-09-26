@@ -1,7 +1,5 @@
 # When is the JFK queue worth it? JFK -> Manhattan yellow taxi trip times
 
-FDE Data Foundations Assignment (Classes 4-8), Track B: NYC TLC.
-
 
 ## 1. Project scope
 
