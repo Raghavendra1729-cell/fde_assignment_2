@@ -2,8 +2,6 @@
 
 FDE Data Foundations Assignment (Classes 4-8), Track B: NYC TLC.
 
-The client is a hypothetical yellow-cab fleet. The data is real: NYC TLC yellow taxi trip records for April,
-May and June 2026, the TLC taxi zone lookup, and hourly weather from the Open-Meteo archive API.
 
 ## 1. Project scope
 
