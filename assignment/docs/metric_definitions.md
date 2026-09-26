@@ -17,7 +17,7 @@ Group levels in the outputs:
 - `outputs/metrics_by_month.csv`: per month and "all" (all three months pooled, not an average of months).
 - `outputs/metrics_by_hour.csv`: per day type (weekday = Mon-Fri, weekend = Sat-Sun) x pickup hour, all months pooled.
 
-Advice column (in `metrics_by_hour.csv` and the evidence table), a simple rule I picked:
+Advice column (in `metrics_by_hour.csv` and the evidence table):
 
 - steer toward: long-trip rate 10% or less
 - steer away: long-trip rate 50% or more

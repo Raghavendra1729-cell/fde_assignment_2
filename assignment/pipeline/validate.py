@@ -48,7 +48,7 @@ def check(month, check_id, name, severity, status, value, detail=""):
 
 
 def file_checks(con, month, rows_loaded, parquet_rows, schema_info):
-    """Checks on the whole monthly file (all ~4M rows), before we narrow to JFK."""
+    """Check the whole monthly file (all ~4M rows) before narrowing to JFK."""
     out = []
     missing = schema_info["missing"]
     out.append(check(month, "S01", "required columns present", "FAIL-level",
@@ -117,7 +117,7 @@ def file_checks(con, month, rows_loaded, parquet_rows, schema_info):
 
 
 def volume_check(month, rows_loaded, manifest):
-    """Compare the row count with the previous month's file, if we have it. A big jump or drop
+    """Compare the row count with the previous month's file when available. A big jump or drop
     usually means a partial or duplicated file."""
     year, mon = int(month[:4]), int(month[5:])
     prev = f"{year - 1}-12" if mon == 1 else f"{year}-{mon - 1:02d}"

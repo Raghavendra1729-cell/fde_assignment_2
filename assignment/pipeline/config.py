@@ -18,7 +18,7 @@ WEATHER_LAT = 40.64
 WEATHER_LON = -73.78
 TIMEZONE = "America/New_York"
 
-# Columns we actually need from the trip files. Reading only these keeps memory low.
+# Required trip-file columns. Reading only these keeps memory use low.
 TRIP_COLUMNS = [
     "VendorID", "tpep_pickup_datetime", "tpep_dropoff_datetime", "passenger_count",
     "trip_distance", "RatecodeID", "PULocationID", "DOLocationID", "payment_type",

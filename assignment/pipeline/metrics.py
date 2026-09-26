@@ -38,7 +38,7 @@ def core_metrics(con, months, group_cols):
 
 def rain_metrics(con, months, by_month):
     """Wet vs dry long-trip rate. The raw gap is mixed up with hour of day (rain is not spread evenly
-    over hours), so I also compare wet and dry trips inside the same day type + pickup hour cell and
+    over hours), so this also compares wet and dry trips inside the same day type + pickup hour cell and
     weight the differences by wet trips."""
     g = "source_month," if by_month else ""
     gm = "GROUP BY source_month" if by_month else ""

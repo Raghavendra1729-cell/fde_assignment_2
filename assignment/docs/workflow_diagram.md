@@ -17,7 +17,7 @@ Plain-text version:
 ```
 [decide to go to JFK at hour H] -> [queue wait] -> [meter on @ JFK] -> [drive] -> [meter off @ Manhattan] -> [payment]
       intervention (not in data)     (not in data)    pickup event                   dropoff event          fare_amount, tip
-                                                        |_________________ outcome we measure _________________|
+                                                        |________________ measurable outcome _________________|
                                                            duration_min, is_long (> 60 min), fare_per_trip_hour
 ```
 
@@ -28,10 +28,10 @@ V01-V05), `out of scope` (zone pair is right but rate code is not 2). Flags F01-
 
 ```mermaid
 flowchart TD
-    S1["TLC trip parquet<br/>(HTTPS file)"] --> I
-    S2["Taxi zone CSV<br/>(HTTPS file)"] --> I
-    S3["Open-Meteo<br/>(JSON API)"] --> I
-    I["ingest.py<br/>download with retries, skip if size + sha256 match<br/>and Last-Modified unchanged,<br/>raw files + raw_manifest.json"] --> V
+    S1["TLC trip parquet<br/>(HTTPS file)"] --> INGEST
+    S2["Taxi zone CSV<br/>(HTTPS file)"] --> INGEST
+    S3["Open-Meteo<br/>(JSON API)"] --> INGEST
+    INGEST["ingest.py<br/>download with retries, skip if size + sha256 match<br/>and Last-Modified unchanged,<br/>raw files + raw_manifest.json"] --> V
     V["validate.py<br/>file checks S01-S10, trip rules V01-V06 / F01-F03,<br/>row reconciliation R01-R02, gate G01-G02"] -->|month passed| M
     V -->|month failed| X["stop: month not published,<br/>outputs/ left as they were, exit code 1"]
     M["model.py<br/>dim_zone, dim_hour, dim_vendor, trip_fact,<br/>orphan key check"] --> K

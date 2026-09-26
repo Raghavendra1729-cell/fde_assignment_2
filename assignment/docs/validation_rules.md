@@ -52,15 +52,14 @@ V06 shows 10,178 hits but only 9,789 trips are excluded for scope alone. 199,156
 If any FAIL-level check trips, that month is not published and `outputs/` is left as it was.
 WARN means it's logged and shown in the checks file, but the month still publishes. If the weather API fails
 (after 3 tries), S09 is a WARN, that month's weather columns stay empty, and the wet/dry rows of the evidence
-table show n/a. The duration metrics don't need weather, so they still publish. I ran this on purpose, see
-`docs/run_logs/run5_weather_api_down.log`, and `tests/test_validation.py` has a test for it. All output files
+table show n/a. The duration metrics do not need weather, so they still publish. This failure case is recorded in
+`docs/run_logs/run5_weather_api_down.log` and covered by `tests/test_validation.py`. All output files
 are built in `outputs/.tmp/` first and moved into `outputs/` only after generation succeeds, so validation and
 generation failures leave the published files unchanged.
 
-## What I did not "fix"
+## Decisions for ambiguous data
 
-- I did not impute durations for the VendorID 7 trips. The trips look real (normal fares and distances) but
-  there's nothing to measure duration from.
-- I did not guess that null-rate-code trips at $70 are flat fare. They are Flex Fare trips.
-- I did not move zone 264 "Unknown" dropoffs into Manhattan.
-- The thresholds (10 min, 180 min, 5 miles, 60 min) are my judgement, written in config so they can be argued with.
+- VendorID 7 durations are not imputed. The trips have normal fares and distances, but no usable duration.
+- Null-rate-code trips at $70 remain outside the flat-fare population because they are Flex Fare trips.
+- Zone 264 "Unknown" dropoffs are not classified as Manhattan.
+- The thresholds (10 min, 180 min, 5 miles, 60 min) are documented judgement calls stored in configuration.

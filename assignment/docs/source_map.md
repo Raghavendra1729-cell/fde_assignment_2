@@ -1,8 +1,8 @@
 # Source map
 
-The client is a (hypothetical) yellow-cab fleet. The ops manager's question is: at which hours is it worth
-sending our drivers into the JFK taxi queue for a Manhattan fare? The data below is real public data.
-Where the answer would need the fleet's own systems, I say so in the "gaps" column.
+The client is a hypothetical yellow-cab fleet. The operations question is: at which hours is it worth
+sending drivers into the JFK taxi queue for a Manhattan fare? The analysis uses real public data. Information
+that would require the fleet's internal systems is identified in the "gaps" column.
 
 ## Business question -> information -> source
 
@@ -13,12 +13,12 @@ Where the answer would need the fleet's own systems, I say so in the "gaps" colu
 | 3 | Is the trip on the flat fare? | RatecodeID, fare_amount | TLC yellow trip records | same as 1; the data dictionary defines RatecodeID as the final rate code in effect | per trip | about 27% of rate code 2 records are not JFK -> Manhattan zone pairs, so rate code alone cannot define the route; Flex Fare trips have no rate code at all |
 | 4 | What does the $70 work out to per hour for the driver? | fare, tip, trip duration | TLC yellow trip records | same as 1 | per trip | cash tips not recorded; queue wait not recorded; the fleet's lease / pay split is not in public data |
 | 5 | Does bad weather go with slower trips? | hourly precipitation near JFK | Open-Meteo historical weather API (JSON) | Open-Meteo (model reanalysis data, not a station reading) | one row per hour per grid cell | one point at JFK only, nothing for the route or Manhattan; a model estimate |
-| 6 | How long do drivers wait in the JFK queue before the pickup? | queue entry time, queue length by hour | JFK taxi dispatch / holding lot system (Port Authority), or the fleet's own driver app | Port Authority / the client | per cab per queue visit | **not available to me at all**. This is the biggest gap, see README |
-| 7 | Which of these trips were driven by the client's own cabs? | medallion or driver id | the fleet's dispatch system | the client | per shift / per trip | public TLC data has no medallion or driver id, so I use all yellow cabs as a proxy |
+| 6 | How long do drivers wait in the JFK queue before the pickup? | queue entry time, queue length by hour | JFK taxi dispatch / holding lot system (Port Authority), or the fleet's own driver app | Port Authority / the client | per cab per queue visit | unavailable in the public sources; this is the largest gap, see README |
+| 7 | Which of these trips were driven by the client's own cabs? | medallion or driver id | the fleet's dispatch system | the client | per shift / per trip | public TLC data has no medallion or driver id, so all yellow cabs serve as a proxy |
 
 ## Source overview
 
-| Source | Retrieval mode | What I pull | Refresh | How I know it's complete |
+| Source | Retrieval mode | Data retrieved | Refresh | Completeness check |
 |---|---|---|---|---|
 | TLC yellow trip parquet, `https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_YYYY-MM.parquet` | file over HTTPS (then queried with DuckDB SQL) | 3 files: 2026-04, 2026-05, 2026-06, 13 of 20-21 columns | monthly, about 2 months behind | size on disk = HTTP Content-Length, sha256 in `data/raw_manifest.json`, rows read = rows in parquet footer, every day of the month present, row count within 15% of the month before |
 | TLC taxi zone lookup, `https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv` | file over HTTPS | 265 zones | rarely (Last-Modified is Feb 2024) | 265 rows, zone 132 = "JFK Airport", sha256 in manifest (the server gzips it, so there's no usable Content-Length) |
@@ -37,10 +37,10 @@ The $70 JFK-Manhattan flat fare and applicable additions are checked against the
   Both are local New York time (TLC timestamps are local and have no timezone, Open-Meteo was asked for
   `timezone=America/New_York`).
 
-## Things I found out about the sources along the way
+## Source observations
 
 - The June 2026 file has an extra column, `request_source`, that is not in the data dictionary. April and May
-  don't have it. I only read the columns I need, so it can't break anything, and check S01 reports it.
+  do not have it. The pipeline reads only the required columns, and check S01 reports the difference.
 - 21-26% of rows per month have no RatecodeID and no passenger_count. All of them are payment_type 0, "Flex Fare".
 - VendorID 7 (Helix): 100% of its trips have dropoff time = pickup time, in all three months. 150,538 trips in the
   whole three-month data, 2,148 of them JFK -> Manhattan.

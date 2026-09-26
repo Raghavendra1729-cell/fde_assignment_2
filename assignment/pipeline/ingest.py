@@ -47,7 +47,7 @@ def now_utc():
 
 def republished(url, entry):
     # TLC sometimes replaces a month's file. A HEAD request is cheap, so compare Last-Modified.
-    # If the server can't be reached we keep the local copy, so an offline rerun still works.
+    # If the server cannot be reached, keep the local copy so an offline rerun still works.
     try:
         r = requests.head(url, timeout=30)
     except requests.RequestException as e:
@@ -61,11 +61,11 @@ def republished(url, entry):
 
 
 def download_file(url, dest, manifest, force=False, check_remote=False):
-    """Download url to dest unless we already have it. Returns the manifest entry."""
+    """Download url to dest unless a valid local copy exists. Return the manifest entry."""
     name = dest.name
     entry = manifest["files"].get(name)
 
-    # Skip if the local file has the same size and sha256 as when we downloaded it
+    # Skip when the local file has the recorded size and sha256
     # (and, for trip files, the server's Last-Modified hasn't changed).
     if dest.exists() and entry and not force:
         if dest.stat().st_size == entry["bytes"] and sha256_of(dest) == entry["sha256"]:
@@ -125,7 +125,7 @@ def download_file(url, dest, manifest, force=False, check_remote=False):
 def get_trip_file(month, manifest, force=False):
     dest = config.RAW_DIR / "trips" / f"yellow_tripdata_{month}.parquet"
     entry = download_file(config.TRIP_URL.format(month=month), dest, manifest, force, check_remote=True)
-    # parquet footer tells us how many rows the publisher wrote; used for the completeness check
+    # The parquet footer contains the publisher's row count for the completeness check.
     entry["parquet_num_rows"] = pq.ParquetFile(dest).metadata.num_rows
     return dest
 
@@ -165,7 +165,7 @@ def check_weather(payload, month):
 
 def get_weather(month, manifest, force=False):
     """Fetch hourly weather for the month from Open-Meteo. Returns the raw JSON file path.
-    Raises RetrievalError if we cannot get a complete month."""
+    Raise RetrievalError when a complete month cannot be retrieved."""
     dest = config.RAW_DIR / "weather" / f"open_meteo_{month}.json"
     dest.parent.mkdir(parents=True, exist_ok=True)
     if dest.exists() and not force:

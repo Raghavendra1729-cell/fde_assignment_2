@@ -5,13 +5,12 @@ FDE Data Foundations Assignment (Classes 4-8), Track B: NYC TLC.
 The client is a hypothetical yellow-cab fleet. The data is real: NYC TLC yellow taxi trip records for April,
 May and June 2026, the TLC taxi zone lookup, and hourly weather from the Open-Meteo archive API.
 
-## 1. What the assignment asked
+## 1. Project scope
 
-Take a client problem from messy source data to a small pipeline that produces metrics you can trust. For
-Track B: build a workflow view of NYC taxi trips, validate duration and location data, define 3-5 operational
-metrics and automate a repeatable monthly run. Hand in a repo with README, source map, workflow/data model
-diagram, notebooks + a runnable pipeline, an evidence table with Known / Unknown / Assumption / Limitation,
-and a 3-5 minute demo of one judgement call.
+This Track B project takes a client problem from messy source data to a pipeline with traceable metrics. It
+includes a workflow view of NYC taxi trips, duration and location validation, five operational metrics, and a
+repeatable monthly run. The repository contains a README, source map, workflow/data model diagram, notebooks,
+a runnable pipeline, and an evidence table covering knowns, unknowns, assumptions, and limitations.
 
 ## 2. The problem
 
@@ -20,11 +19,11 @@ picks up at the wrong hour can spend well over an hour in traffic for the same $
 night. The fleet's operations manager wants to know which pickup hours are worth sending drivers into the JFK
 queue for.
 
-I sized it on the raw files first, before any rules (end of notebook 01): 212,688 JFK -> Manhattan trips in
+Raw-file sizing before any rules (end of notebook 01) found 212,688 JFK -> Manhattan trips in
 three months and 34.4% took over an hour. The hour matters a lot: a weekday 14:00 pickup has a median of 70.2
 minutes ($58.99 per hour on the meter), a weekday 21:00 pickup 39.0 minutes ($104.21 per hour).
 
-Users / stakeholders (roles I'm assuming, I didn't interview anyone):
+Stakeholder roles used for the analysis:
 
 | Role | What they need |
 |---|---|
@@ -50,11 +49,11 @@ Full source map (question -> information -> source -> owner -> grain -> gaps): [
 | TLC taxi zone lookup (CSV) | NYC TLC | one row per zone (265) | file over HTTPS | which zones are JFK / Manhattan |
 | Open-Meteo historical weather | Open-Meteo | one hour, one point near JFK | JSON API | wet vs dry hours |
 
-Gaps: there is no JFK queue data (so I only see trip time, not queue wait) and no medallion id (so all yellow
+Gaps: there is no JFK queue data, so the analysis covers trip time rather than queue wait. There is also no medallion id, so all yellow
 cabs stand in for the client's fleet).
 
 Two retrieval modes: files over HTTPS and a JSON API. DuckDB SQL is then used to query them. Code:
-`pipeline/ingest.py`, walkthrough: notebook 01. How I know the pull is complete:
+`pipeline/ingest.py`, walkthrough: notebook 01. Completeness checks:
 
 - Parquet size on disk = HTTP Content-Length for all three months.
 - Rows read = parquet footer rows (3,831,240 / 4,090,836 / 3,837,248), every day has pickups, and the row count
@@ -85,7 +84,7 @@ Result: of 212,688 zone-pair trips, 3,743 (1.8%) excluded for quality, 9,789 out
 ## 5. Workflow model and metrics
 
 Workflow: decide to go to JFK at hour H (the intervention) -> queue (not in the data) -> meter on at JFK ->
-drive -> meter off in Manhattan -> payment. The outcome I can measure is the meter-on to meter-off part.
+drive -> meter off in Manhattan -> payment. The measurable outcome is the meter-on to meter-off segment.
 
 Model in `data/processed/jfk_trips.duckdb` (`pipeline/model.py`): `trip_fact` (one row per valid trip) with keys
 to `dim_hour` (hour, day type, weather), `dim_zone` and `dim_vendor`, plus the views `trip_events` (meter_on /
@@ -97,14 +96,14 @@ Metrics ([definitions and KPI link](docs/metric_definitions.md)):
 1. Long-trip rate (KPI)
 2. Median and P90 duration
 3. Effective fare per trip-hour (actual fare / hours on the meter)
-4. Quality exclusion rate (how much I can trust the month)
+4. Quality exclusion rate (data reliability by month)
 5. Wet vs dry long-trip rate, raw and within the same hour
 
 ## 6. Pipeline dependability
 
 `python -m pipeline.run --months 2026-04 2026-05 2026-06` runs ingest -> validate -> model -> metrics.
 
-- Logging: console + `logs/pipeline.log`. Logs from my real runs are in [docs/run_logs/](docs/run_logs/).
+- Logging: console + `logs/pipeline.log`. Run logs are in [docs/run_logs/](docs/run_logs/).
 - Checks between stages: schema, footer vs loaded rows, month coverage, volume, vendor timestamps, weather
   hours, count reconciliation, then a gate (quality exclusions <= 10%, at least 1,000 valid trips) and an
   orphan-key check on the model.
@@ -183,12 +182,12 @@ Valid JFK -> Manhattan flat-fare trips, Apr-Jun 2026:
 Suggested guidance: on weekdays, steer drivers away from JFK pickups between 07:00 and 16:00 and toward JFK
 from 19:00 on. On weekends JFK is fine most of the day. This covers trip time only; queue wait could change it.
 
-**Judgement call: what counts as a "JFK -> Manhattan run".** The shortcut is `RatecodeID = 2`, the JFK flat
-fare. I didn't use it as the route definition because the field only records the final rate code in effect,
-and 27% of rate code 2 records aren't JFK -> Manhattan zone pairs (mostly the opposite direction). So the run
-is defined by where the meter went on and off (zone 132 to a Manhattan zone), and the rate code then decides
-whether the trip is in the flat-fare population. Notebook 03 compares the two: the rate-code-only version adds
-about 61,500 wrong-direction or unrelated trips and changes the advice in five hour cells.
+**Judgement call: what counts as a "JFK -> Manhattan run".** `RatecodeID = 2` is the JFK flat-fare code, but it
+only records the final rate code in effect and does not reliably identify the route. About 27% of rate code 2
+records are not JFK -> Manhattan zone pairs, mostly because they travel in the opposite direction. The route is
+therefore defined by meter-on and meter-off locations (zone 132 to a Manhattan zone), with the rate code used as
+the flat-fare scope filter. Notebook 03 compares the definitions: rate code alone adds about 61,500
+wrong-direction or unrelated trips and changes the advice in five hour cells.
 
 ## 9. Known / Unknown / Assumption / Limitation
 
